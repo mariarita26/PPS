@@ -14,7 +14,7 @@ public enum EnvioStateEnum implements EnvioState{
 
     TRANSPORTADORA {
         public EnvioState atualizarStatus(){
-            System.out.println("STATUS - Pedido recebido pela transportadora");
+            System.out.println("\nSTATUS - Pedido recebido pela transportadora");
             return this;
         }
 
@@ -26,12 +26,11 @@ public enum EnvioStateEnum implements EnvioState{
 
     RECEBIDO {
         public EnvioState atualizarStatus(){
-            System.out.println("STATUS - Pedido recebido pela transportadora");
+            System.out.println("\nSTATUS - Pedido recebido pelo cliente");
             return this;
         }
 
         public EnvioState enviarPedido(){
-            System.out.println("Pedido enviado para cliente");
             return FINALIZADO;
         }
     },
@@ -43,7 +42,6 @@ public enum EnvioStateEnum implements EnvioState{
         }
 
         public EnvioState enviarPedido(){
-            System.out.println("Pedido entregue com sucesso!");
             return this;
         }
     }
