@@ -28,9 +28,6 @@ public class Envio {
             this.setProblema(false);
             this.envioState = EnvioStateEnum.PREPARACAO;
         }
-//        else {
-//            System.out.println("Envio concluído");
-//        }
     }
 
     public boolean hasProblema(){
