@@ -28,10 +28,6 @@ public class Grafo<T> {
 		arestas = new ArrayList<Aresta<T>>();
 	}
 
-
-	/** Obtem um List de Vertices do grafo
-	 * @return the vertices
-	 */
 	public List<Vertice<T>> getVertices() {
 		return vertices;
 	}
@@ -458,12 +454,6 @@ public class Grafo<T> {
 
 	 @SuppressWarnings("unchecked")
 	public Object clone() {
-//	        try {
-//	            return (Grafo)super.clone();
-//	        }
-//	        catch (CloneNotSupportedException e) {
-//	            return null;
-//	        }
 
 		 try {
 			Grafo<T> clone = (Grafo<T>)super.clone();
@@ -521,66 +511,3 @@ public class Grafo<T> {
 			}
 
 }
-
-//package grafo.dirigido;
-//
-//import grafo.dirigido.BFSIterator;
-//import grafo.dirigido.DFSIterator;
-//import grafo.dirigido.GrafoIterator;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//public class Grafo<T> {
-//
-//	private final List<Vertice<T>> vertices;
-//	private final List<Aresta<T>> arestas;
-//
-//	public Grafo() {
-//		vertices = new ArrayList<>();
-//		arestas = new ArrayList<>();
-//	}
-//
-//	public Vertice<T> getVertice(T carga) {
-//		for (Vertice<T> u : vertices) {
-//			if (u.getCarga().equals(carga)) return u;
-//		}
-//		return null;
-//	}
-//
-//	public void addVertice(T carga) {
-//		if (getVertice(carga) == null) {
-//			vertices.add(new Vertice<>(carga));
-//		}
-//	}
-//
-//	public Aresta<T> getAresta(Vertice<T> origem, Vertice<T> destino) {
-//		for (Aresta<T> aresta : arestas) {
-//			if (aresta.getOrigem().equals(origem) && aresta.getDestino().equals(destino))
-//				return aresta;
-//		}
-//		return null;
-//	}
-//
-//	public void addAresta(T origem, T destino, int peso) {
-//		Vertice<T> u, v;
-//		if ((u = getVertice(origem)) == null || (v = getVertice(destino)) == null) return;
-//
-//		if (getAresta(u, v) == null) {
-//			Aresta<T> e = new Aresta<>(u, v, peso);
-//			u.addAdj(e);
-//			arestas.add(e);
-//		}
-//	}
-//
-//	@SuppressWarnings("unchecked")
-//	public BFSIterator<T> BFSIterator(T carga) {
-//		return new BFSIterator<>(this.vertices, this.arestas, carga);
-//	}
-//
-//	@SuppressWarnings("unchecked")
-//	public DFSIterator<T> DFSIterator(T carga) {
-//		return new DFSIterator<>(this.vertices, carga);
-//	}
-//
-//}
